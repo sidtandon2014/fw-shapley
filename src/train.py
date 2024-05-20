@@ -388,12 +388,6 @@ class ParameterizedShapleyEstimator():
                                                                         , batch_size=test_batch_size
                                                                         , shuffle=True))
 
-        # Set up test dataset.
-        # test_set = get_tensor_dataset(
-        #             (torch.tensor(train_data[0].numpy().copy())
-        #             , torch.tensor(train_data[1].numpy().copy()))
-        #             )
-
         train_test_set = CustomTensorDataset(
             train_data[0].numpy().copy()
             ,train_data[1].numpy().copy()
@@ -402,31 +396,7 @@ class ParameterizedShapleyEstimator():
         train_test_loader = DataLoader(train_test_set
                                 , pin_memory=True
                                 , num_workers=num_workers)
-        # val_test_set = get_tensor_dataset(
-        #             (torch.tensor(val_data[0].numpy().copy())
-        #             , torch.tensor(val_data[1].numpy().copy()))
-        #             )
-
-        # val_test_set = CustomTensorDataset(
-        #     val_data[0].numpy().copy()
-        #     ,val_data[1].numpy().copy()
-        #     ,test_batch_size
-        # )
-        # val_test_loader = DataLoader(val_test_set,batch_size=test_batch_size,shuffle=True,
-        #                         pin_memory=True, num_workers=num_workers)
-        # test_loader = DataLoader(test_set, 
-        #                          pin_memory=True
-        #                          , num_workers=num_workers
-        #                          , batch_sampler=StratifiedBatchSampler(train_data[1]
-        #                                                                 , batch_size=test_batch_size
-        #                                                                 , shuffle=True))
-        # val_test_loader = DataLoader(val_test_set, 
-        #                          pin_memory=True
-        #                          , num_workers=num_workers
-        #                          , batch_sampler=StratifiedBatchSampler(val_data[1]
-        #                                                                 , batch_size=test_batch_size
-        #                                                                 , shuffle=True))
-
+        
         train_test_iter = iter(train_test_loader)
 
         # Grand coalition value.

@@ -6,7 +6,7 @@ Fast Weighted shapley: Real time estimation of weighted shapley values
 Architecture diagram for data valuation setting 
 - We have leverage Supervised Contrative Loss from this paper: https://arxiv.org/pdf/2004.11362.pdf
 
-![screenshot](./fast-weighted-data-shapley/figs/Architecture.jpg)
+![screenshot](./src/figs/Architecture.jpg)
 
 ## Files
 - ```src/networks/model.py```: stores the architecture of the weighted shapley estimator network

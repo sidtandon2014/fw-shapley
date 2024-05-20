@@ -10,7 +10,7 @@ sys.path.append('../')
 # from models.pytorch_fitmodule.utils import get_loader
 from datasets import load_FashionMNIST, get_split_dataset, extract_features
 from train import ParameterizedShapleyEstimator
-from networks.cross_attentiopn_gating_cosine_normalize import EstimatorNetwork
+from networks.model import EstimatorNetwork
 from datasets import get_split_dataset, extract_features
 from torch.utils.data import DataLoader, TensorDataset
 
